@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'landing_screen.dart';
 import 'home.dart';
+import 'clinical_history_screen.dart';
 import 'medical_story.dart';
 import 'patient_info.dart';
 import 'add_patient.dart';
@@ -17,11 +19,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: 'AvenirArabic',
+        scaffoldBackgroundColor: const Color(0xFF0f172a),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF0f172a),
+          elevation: 0,
+        ),
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen(),
+        '/': (context) => const LandingScreen(),
+        '/vitalSigns': (context) => const HomeScreen(),
+        '/clinicalHistory': (context) => const ClinicalHistoryScreen(),
         '/clinicalStory': (context) => MedicalHistoryScreen(),
         '/patientInfo': (context) => PatientInfoScreen(),
         '/addPatient': (context) => AddPatientScreen(),

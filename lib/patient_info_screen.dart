@@ -50,7 +50,12 @@ class _PatientInfoScreenState extends State<PatientInfoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('معلومات المريض: ${widget.patientName}'),
+        title: Text('معلومات المريض: ${widget.patientName}',
+            style: const TextStyle(color: Colors.white)),
+        centerTitle: true,
+        backgroundColor: const Color(0xFF0f172a),
+        iconTheme: const IconThemeData(color: Colors.white),
+        elevation: 0,
       ),
       body: Directionality(
         textDirection: TextDirection.rtl,

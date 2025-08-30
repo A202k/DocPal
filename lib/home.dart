@@ -296,7 +296,11 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('الرئيسة', style: TextStyle(fontSize: 22, color: Colors.white)),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () => Navigator.pop(context),
+          ),
+          title: const Text('المؤشرات الحيوية', style: TextStyle(fontSize: 22, color: Colors.white)),
           centerTitle: true,
           flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -325,15 +329,16 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.white.withOpacity(0.12)),
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(color: Colors.white.withOpacity(0.15), width: 1.5),
                       gradient: LinearGradient(
-                        colors: [Colors.white.withOpacity(0.14), Colors.white.withOpacity(0.06)],
+                        colors: [Colors.white.withOpacity(0.18), Colors.white.withOpacity(0.08)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       boxShadow: [
-                        BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 24, offset: const Offset(0, 12)),
+                        BoxShadow(color: Colors.black.withOpacity(0.12), blurRadius: 30, offset: const Offset(0, 15)),
+                        BoxShadow(color: Colors.cyanAccent.withOpacity(0.05), blurRadius: 20, offset: const Offset(0, 5)),
                       ],
                     ),
                     child: TabBar(
@@ -341,8 +346,15 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                       labelColor: Colors.white,
                       unselectedLabelColor: Colors.white70,
                       indicator: BoxDecoration(
-                        borderRadius: BorderRadius.circular(18),
-                        color: Colors.cyanAccent.withOpacity(0.25),
+                        borderRadius: BorderRadius.circular(22),
+                        gradient: LinearGradient(
+                          colors: [Colors.cyanAccent.withOpacity(0.35), Colors.blueAccent.withOpacity(0.25)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        boxShadow: [
+                          BoxShadow(color: Colors.cyanAccent.withOpacity(0.2), blurRadius: 10, offset: const Offset(0, 3)),
+                        ],
                       ),
                       tabs: const [
                         Tab(icon: Icon(Icons.local_hospital, color: Colors.redAccent), text: 'العناية المشددة'),
